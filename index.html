@@ -8,5 +8,13 @@
     <h1>Play Rock, Paper, Scissors</h1>
     <p>Open the console to start.</p>
   </body>
-  <script></script>
+  <script>
+      // Declare a global function named computerPlay that chooses something to play at random.
+      function computerPlay() {
+          // Choose a random integer between 0 inclusively and 3 exclusively.
+          let randomInt = Math.floor(Math.random() * 3);
+          // Return that integer.
+          return randomInt;
+      }
+  </script>
 </html>
