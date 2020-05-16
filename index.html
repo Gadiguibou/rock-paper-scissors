@@ -102,7 +102,48 @@
             return `You Lose! ${computerSelection} beats ${playerSelection}`;
         }
     }
-
+    // Declare a global function that takes a number of rounds as a parameter (must be an integer) and plays those rounds while keeping track of the score.
+    function game(numberOfRounds = 5) {
+        // Create two variables named playerScore and computerScore to hold integers and set them to 0.
+        let playerScore = 0;
+        let computerScore = 0;
+        // Create a loop that iterates over it's content numberOfRounds time(s).
+        for (let roundNumber = 0; roundNumber < numberOfRounds; roundNumber++) {
+            // Play a round and store the result in a constant named roundResult
+            const roundResult = playRound(userSelect(),computerPlay());
+            // If roundResult contains the substring "Win":
+            if (roundResult.indexOf("Win") !== -1) {
+                // Add 1 to playerScore
+                playerScore += 1;
+            }
+            // Else if the roundResult contains the substring "Lose":
+            else if (roundResult.indexOf("Lose") !== -1) {
+                // Add 1 to computerScore
+                computerScore += 1;
+            }
+            // Else, the roundResult is a draw, don't add anything to the scores.
+            // Log the roundResult to the console
+            console.log(`${roundResult}`)
+            // Log the current score
+            console.log(`The current score is: Player: ${playerScore} to Computer: ${computerScore}`);
+        }
+        // When the loop is done, compare the playerScore and computerScore to find the winner.
+        // If the playerScore is higher than the computerScore:
+        if (playerScore > computerScore) {
+            // Log `Victory! You won the game with a score of ${playerScore} to ${computerScore}.` to the console.
+            console.log(`Victory! You won the game with a score of ${playerScore} to ${computerScore}.`);
+        }
+        // Else if the playerScore is the same as the computerScore:
+        else if (playerScore = computerScore) {
+            // Log `Draw! The game ends with ${playerScore} everywhere.` to the console.
+            console.log(`Draw! The game ends with ${playerScore}s everywhere.`);
+        }
+        // Else, the computerScore is higher than the playerScore:
+        else {
+            // Log `Defeat! The computer won the game with a score of ${computerScore} to ${playerScore}.` to the console.
+            console.log(`Defeat! The computer won the game with a score of ${computerScore} to ${playerScore}.`);
+        }
+    } 
 </script>
 
 </html>
