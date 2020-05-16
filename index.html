@@ -1,171 +1,179 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Rock, Paper, Scissors</title>
-        <meta charset="UTF-8" />
-    </head>
+  <head>
+    <title>Rock, Paper, Scissors</title>
+    <meta charset="UTF-8" />
+  </head>
 
-    <body>
-        <h1>Play Rock, Paper, Scissors</h1>
-        <p>Open the console to start.</p>
-        <p>Then press this button to play a game.</p>
-        <button class="playButton">Play now!</button>
-    </body>
-    <script>
-        // Create a constant named playButton to store the button element of class .playButton on the page.
-        const playButton = document.querySelector(".playButton");
-        // When the playButton is clicked, play a game.
-        playButton.onclick = function () {
-            // Ask how many rounds the user wants to play and store it in a variable named roundPrompt.
-            let roundPrompt = Number(prompt("How many rounds do you want to play?"));
-            // If roundPrompt is greater than 1 (implies that it is a number):
-            if (roundPrompt >= 1) {
-                // Log how many rounds will be played to the console.
-                console.log(`You are playing a best of ${roundPrompt}.`);
-                // Play a game with roundPrompt rounds.
-                game(roundPrompt);
-            }
-            // Else:
-            else {
-                // Alert "Please enter a valid number."
-                alert("Please enter a valid number.");
-            }
-        };
-        // Declare a global function named computerPlay that chooses something to play at random.
-        function computerPlay() {
-            // Choose a random integer between 0 inclusively and 3 exclusively and store it in a variable named randomInt.
-            let randomInt = Math.floor(Math.random() * 3);
-            // Log value of randomInt to the console.
-            // console.log(`randomInt === ${randomInt}`);
-            // Create a variable named result to store the computer's choice.
-            let result;
-            // Assign a value to result based on randomInt's value.
-            switch (randomInt) {
-                case 0:
-                    // If randomInt = 0, assign the value of "Rock" to result.
-                    result = "Rock";
-                    break;
-                case 1:
-                    // If randomInt = 1, assign the value of "Paper" to result.
-                    result = "Paper";
-                    break;
-                case 2:
-                    //If randomInt = 2, assign the value of 'Scissors' to result.
-                    result = "Scissors";
-                    break;
-            }
-            // Log value of result to the console.
-            // console.log(`result === ${result}`);
-            // Log what the computer picked.
-            console.log(`Computer picked ${result}.`);
-            // Return result.
-            return result;
+  <body>
+    <h1>Play Rock, Paper, Scissors</h1>
+    <p>Open the console to start.</p>
+    <p>Then press this button to play a game.</p>
+    <button class="playButton">Play now!</button>
+  </body>
+  <script>
+    // Create a constant named playButton to store the button element of class .playButton on the page.
+    const playButton = document.querySelector(".playButton");
+    // When the playButton is clicked, play a game.
+    playButton.onclick = function () {
+      // Ask how many rounds the user wants to play and store it in a variable named roundPrompt.
+      let roundPrompt = Number(prompt("How many rounds do you want to play?"));
+      // If roundPrompt is greater than 1 (implies that it is a number):
+      if (roundPrompt >= 1) {
+        // Log how many rounds will be played to the console.
+        console.log(`You are playing a best of ${roundPrompt}.`);
+        // Play a game with roundPrompt rounds.
+        game(roundPrompt);
+      }
+      // Else:
+      else {
+        // Alert "Please enter a valid number."
+        alert("Please enter a valid number.");
+      }
+    };
+    // Declare a global function named computerPlay that chooses something to play at random.
+    function computerPlay() {
+      // Choose a random integer between 0 inclusively and 3 exclusively and store it in a variable named randomInt.
+      let randomInt = Math.floor(Math.random() * 3);
+      // Log value of randomInt to the console.
+      // console.log(`randomInt === ${randomInt}`);
+      // Create a variable named result to store the computer's choice.
+      let result;
+      // Assign a value to result based on randomInt's value.
+      switch (randomInt) {
+        case 0:
+          // If randomInt = 0, assign the value of "Rock" to result.
+          result = "Rock";
+          break;
+        case 1:
+          // If randomInt = 1, assign the value of "Paper" to result.
+          result = "Paper";
+          break;
+        case 2:
+          //If randomInt = 2, assign the value of 'Scissors' to result.
+          result = "Scissors";
+          break;
+      }
+      // Log value of result to the console.
+      // console.log(`result === ${result}`);
+      // Log what the computer picked.
+      console.log(`Computer picked ${result}.`);
+      // Return result.
+      return result;
+    }
+    // Declare a global function named userSelect that prompts the player for his choice and returns it.
+    function userSelect() {
+      // Store a boolean with a default value of false in a variable named userHasPlayed.
+      let userHasPlayed = false;
+      // Create a variable named userPrompt to hold a string of what the player typed in.
+      let userPrompt;
+      // While userHasPlayed === false keep doing:
+      while (userHasPlayed === false) {
+        // Log the value of userHasPlayed to the console.
+        // console.log(`userHasPlayed === ${userHasPlayed}`);
+        // Prompt the user for his choice and store the result in userPrompt.
+        userPrompt = prompt("Type in your choice.");
+        // Log the value of userPrompt to the console.
+        // console.log(`userPrompt === ${userPrompt}`);
+        // If userPrompt (case insensitive) is Rock:
+        if (userPrompt.toUpperCase() === "ROCK") {
+          // Log the user's choice to the console.
+          console.log("User picked Rock");
+          // return "Rock"
+          return "Rock";
         }
-        // Declare a global function named userSelect that prompts the player for his choice and returns it.
-        function userSelect() {
-            // Store a boolean with a default value of false in a variable named userHasPlayed.
-            let userHasPlayed = false;
-            // Create a variable named userPrompt to hold a string of what the player typed in.
-            let userPrompt;
-            // While userHasPlayed === false keep doing:
-            while (userHasPlayed === false) {
-                // Log the value of userHasPlayed to the console.
-                // console.log(`userHasPlayed === ${userHasPlayed}`);
-                // Prompt the user for his choice and store the result in userPrompt.
-                userPrompt = prompt("Type in your choice.");
-                // Log the value of userPrompt to the console.
-                // console.log(`userPrompt === ${userPrompt}`);
-                // If userPrompt (case insensitive) is Rock:
-                if (userPrompt.toUpperCase() === "ROCK") {
-                    // Log the user's choice to the console.
-                    console.log("User picked Rock");
-                    // return "Rock"
-                    return "Rock";
-                }
-                // If userPrompt (case insensitive) is Paper:
-                else if (userPrompt.toUpperCase() === "PAPER") {
-                    // Log the user's choice to the console.
-                    console.log("User picked Paper");
-                    // return "Paper"
-                    return "Paper";
-                }
-                // If userPrompt (case insensitive) is Scissors:
-                else if (userPrompt.toUpperCase() === "SCISSORS") {
-                    // Log the user's choice to the console.
-                    console.log("User picked Scissors");
-                    // return "Scissors"
-                    return "Scissors";
-                }
-                // If userPrompt does not match any of the choices then:
-                else {
-                    // Alert the user to pick a correct choice.
-                    alert('Please pick one of the following "Rock", "Paper" or "Scissors".');
-                }
-            }
+        // If userPrompt (case insensitive) is Paper:
+        else if (userPrompt.toUpperCase() === "PAPER") {
+          // Log the user's choice to the console.
+          console.log("User picked Paper");
+          // return "Paper"
+          return "Paper";
         }
-        // Declare a global function that takes 2 parameters: playerSelection and computerSelection, and returns the winner of the round.
-        function playRound(playerSelection, computerSelection) {
-            // Log both arguments to the console
-            // console.log(`playerSelection === ${playerSelection} && computerSelection === ${computerSelection}`);
-            // If both arguments are the same return "It's a draw! You both chose " + the value of the arguments
-            if (playerSelection === computerSelection) {
-                return `It's a draw! You both chose ${playerSelection}`;
-            }
-            // If the playerSelection beats the computerSelection return "You Win! ${playerSelection} beats ${computerSelection}"
-            else if (
-                (playerSelection === "Rock" && computerSelection === "Scissors") ||
-                (playerSelection === "Paper" && computerSelection === "Rock") ||
-                (playerSelection === "Scissors" && computerSelection === "Paper")
-            ) {
-                return `You Win! ${playerSelection} beats ${computerSelection}`;
-            }
-            // Else, the computerSelection beats the playerSelection. Return "You Lose! ${computerSelection} beats ${playerSelection}"
-            else {
-                return `You Lose! ${computerSelection} beats ${playerSelection}`;
-            }
+        // If userPrompt (case insensitive) is Scissors:
+        else if (userPrompt.toUpperCase() === "SCISSORS") {
+          // Log the user's choice to the console.
+          console.log("User picked Scissors");
+          // return "Scissors"
+          return "Scissors";
         }
-        // Declare a global function that takes a number of rounds as a parameter (must be an integer)
-        // and plays those rounds while keeping track of the score.
-        function game(numberOfRounds = 5) {
-            // Create two variables named playerScore and computerScore to hold integers and set them to 0.
-            let playerScore = 0;
-            let computerScore = 0;
-            // Create a loop that iterates over it's content numberOfRounds time(s).
-            for (let roundNumber = 0; roundNumber < numberOfRounds; roundNumber++) {
-                // Play a round and store the result in a constant named roundResult
-                const roundResult = playRound(userSelect(), computerPlay());
-                // If roundResult contains the substring "Win":
-                if (roundResult.indexOf("Win") !== -1) {
-                    // Add 1 to playerScore
-                    playerScore += 1;
-                }
-                // Else if the roundResult contains the substring "Lose":
-                else if (roundResult.indexOf("Lose") !== -1) {
-                    // Add 1 to computerScore
-                    computerScore += 1;
-                }
-                // Else, the roundResult is a draw, don't add anything to the scores.
-                // Log the roundResult to the console
-                console.log(`${roundResult}`);
-                // Log the current score
-                console.log(`The current score is: Player: ${playerScore} to Computer: ${computerScore}`);
-            }
-            // When the loop is done, compare the playerScore and computerScore to find the winner.
-            // If the playerScore is higher than the computerScore:
-            if (playerScore > computerScore) {
-                // Log `Victory! You won the game with a score of ${playerScore} to ${computerScore}.` to the console.
-                console.log(`Victory! You won the game with a score of ${playerScore} to ${computerScore}.`);
-            }
-            // Else if the playerScore is the same as the computerScore:
-            else if ((playerScore === computerScore)) {
-                // Log `Draw! The game ends with ${playerScore} everywhere.` to the console.
-                console.log(`Draw! The game ends with ${playerScore}s everywhere.`);
-            }
-            // Else, the computerScore is higher than the playerScore:
-            else {
-                // Log `Defeat! The computer won the game with a score of ${computerScore} to ${playerScore}.` to the console.
-                console.log(`Defeat! The computer won the game with a score of ${computerScore} to ${playerScore}.`);
-            }
+        // If userPrompt does not match any of the choices then:
+        else {
+          // Alert the user to pick a correct choice.
+          alert(
+            'Please pick one of the following "Rock", "Paper" or "Scissors".'
+          );
         }
-    </script>
+      }
+    }
+    // Declare a global function that takes 2 parameters: playerSelection and computerSelection, and returns the winner of the round.
+    function playRound(playerSelection, computerSelection) {
+      // Log both arguments to the console
+      // console.log(`playerSelection === ${playerSelection} && computerSelection === ${computerSelection}`);
+      // If both arguments are the same return "It's a draw! You both chose " + the value of the arguments
+      if (playerSelection === computerSelection) {
+        return `It's a draw! You both chose ${playerSelection}`;
+      }
+      // If the playerSelection beats the computerSelection return "You Win! ${playerSelection} beats ${computerSelection}"
+      else if (
+        (playerSelection === "Rock" && computerSelection === "Scissors") ||
+        (playerSelection === "Paper" && computerSelection === "Rock") ||
+        (playerSelection === "Scissors" && computerSelection === "Paper")
+      ) {
+        return `You Win! ${playerSelection} beats ${computerSelection}`;
+      }
+      // Else, the computerSelection beats the playerSelection. Return "You Lose! ${computerSelection} beats ${playerSelection}"
+      else {
+        return `You Lose! ${computerSelection} beats ${playerSelection}`;
+      }
+    }
+    // Declare a global function that takes a number of rounds as a parameter (must be an integer)
+    // and plays those rounds while keeping track of the score.
+    function game(numberOfRounds = 5) {
+      // Create two variables named playerScore and computerScore to hold integers and set them to 0.
+      let playerScore = 0;
+      let computerScore = 0;
+      // Create a loop that iterates over it's content numberOfRounds time(s).
+      for (let roundNumber = 0; roundNumber < numberOfRounds; roundNumber++) {
+        // Play a round and store the result in a constant named roundResult
+        const roundResult = playRound(userSelect(), computerPlay());
+        // If roundResult contains the substring "Win":
+        if (roundResult.indexOf("Win") !== -1) {
+          // Add 1 to playerScore
+          playerScore += 1;
+        }
+        // Else if the roundResult contains the substring "Lose":
+        else if (roundResult.indexOf("Lose") !== -1) {
+          // Add 1 to computerScore
+          computerScore += 1;
+        }
+        // Else, the roundResult is a draw, don't add anything to the scores.
+        // Log the roundResult to the console
+        console.log(`${roundResult}`);
+        // Log the current score
+        console.log(
+          `The current score is: Player: ${playerScore} to Computer: ${computerScore}`
+        );
+      }
+      // When the loop is done, compare the playerScore and computerScore to find the winner.
+      // If the playerScore is higher than the computerScore:
+      if (playerScore > computerScore) {
+        // Log `Victory! You won the game with a score of ${playerScore} to ${computerScore}.` to the console.
+        console.log(
+          `Victory! You won the game with a score of ${playerScore} to ${computerScore}.`
+        );
+      }
+      // Else if the playerScore is the same as the computerScore:
+      else if (playerScore === computerScore) {
+        // Log `Draw! The game ends with ${playerScore} everywhere.` to the console.
+        console.log(`Draw! The game ends with ${playerScore}s everywhere.`);
+      }
+      // Else, the computerScore is higher than the playerScore:
+      else {
+        // Log `Defeat! The computer won the game with a score of ${computerScore} to ${playerScore}.` to the console.
+        console.log(
+          `Defeat! The computer won the game with a score of ${computerScore} to ${playerScore}.`
+        );
+      }
+    }
+  </script>
 </html>
