@@ -83,6 +83,25 @@
             }
         }
     }
+    // Declare a global function that takes 2 parameters: playerSelection and computerSelection, and returns the winner of the round. 
+    function playRound(playerSelection, computerSelection) {
+        // Log both arguments to the console
+        console.log(`playerSelection === ${playerSelection} && computerSelection === ${computerSelection}`);
+        // If both arguments are the same return "It's a draw! You both chose " + the value of the arguments
+        if (playerSelection === computerSelection) {
+            return `It's a draw! You both chose ${playerSelection}`;
+        }
+        // If the playerSelection beats the computerSelection return "You Win! ${playerSelection} beats ${computerSelection}"
+        else if (   (playerSelection === "Rock" && computerSelection === "Scissors")    ||
+                    (playerSelection === "Paper" && computerSelection === "Rock")       ||
+                    (playerSelection === "Scissors" && computerSelection === "Paper")   ) {
+                        return `You Win! ${playerSelection} beats ${computerSelection}`;
+                }
+        // Else, the computerSelection beats the playerSelection. Return "You Lose! ${computerSelection} beats ${playerSelection}"
+        else {
+            return `You Lose! ${computerSelection} beats ${playerSelection}`;
+        }
+    }
 
 </script>
 
