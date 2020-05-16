@@ -17,9 +17,7 @@
         // When the playButton is clicked, play a game.
         playButton.onclick = function () {
             // Ask how many rounds the user wants to play and store it in a variable named roundPrompt.
-            let roundPrompt = Number(
-                prompt("How many rounds do you want to play?")
-            );
+            let roundPrompt = Number(prompt("How many rounds do you want to play?"));
             // If roundPrompt is greater than 1 (implies that it is a number):
             if (roundPrompt >= 1) {
                 // Play a game with roundPrompt rounds.
@@ -50,7 +48,7 @@
                     result = "Paper";
                     break;
                 case 2:
-                    //If randomInt = 0, assign the value of 'Scissors' to result.
+                    //If randomInt = 2, assign the value of 'Scissors' to result.
                     result = "Scissors";
                     break;
             }
@@ -97,9 +95,7 @@
                 // If userPrompt does not match any of the choices then:
                 else {
                     // Alert the user to pick a correct choice.
-                    alert(
-                        'Please pick one of the following "Rock", "Paper" or "Scissors".'
-                    );
+                    alert('Please pick one of the following "Rock", "Paper" or "Scissors".');
                 }
             }
         }
@@ -113,11 +109,9 @@
             }
             // If the playerSelection beats the computerSelection return "You Win! ${playerSelection} beats ${computerSelection}"
             else if (
-                (playerSelection === "Rock" &&
-                    computerSelection === "Scissors") ||
+                (playerSelection === "Rock" && computerSelection === "Scissors") ||
                 (playerSelection === "Paper" && computerSelection === "Rock") ||
-                (playerSelection === "Scissors" &&
-                    computerSelection === "Paper")
+                (playerSelection === "Scissors" && computerSelection === "Paper")
             ) {
                 return `You Win! ${playerSelection} beats ${computerSelection}`;
             }
@@ -133,11 +127,7 @@
             let playerScore = 0;
             let computerScore = 0;
             // Create a loop that iterates over it's content numberOfRounds time(s).
-            for (
-                let roundNumber = 0;
-                roundNumber < numberOfRounds;
-                roundNumber++
-            ) {
+            for (let roundNumber = 0; roundNumber < numberOfRounds; roundNumber++) {
                 // Play a round and store the result in a constant named roundResult
                 const roundResult = playRound(userSelect(), computerPlay());
                 // If roundResult contains the substring "Win":
@@ -154,31 +144,23 @@
                 // Log the roundResult to the console
                 console.log(`${roundResult}`);
                 // Log the current score
-                console.log(
-                    `The current score is: Player: ${playerScore} to Computer: ${computerScore}`
-                );
+                console.log(`The current score is: Player: ${playerScore} to Computer: ${computerScore}`);
             }
             // When the loop is done, compare the playerScore and computerScore to find the winner.
             // If the playerScore is higher than the computerScore:
             if (playerScore > computerScore) {
                 // Log `Victory! You won the game with a score of ${playerScore} to ${computerScore}.` to the console.
-                console.log(
-                    `Victory! You won the game with a score of ${playerScore} to ${computerScore}.`
-                );
+                console.log(`Victory! You won the game with a score of ${playerScore} to ${computerScore}.`);
             }
             // Else if the playerScore is the same as the computerScore:
-            else if ((playerScore = computerScore)) {
+            else if ((playerScore === computerScore)) {
                 // Log `Draw! The game ends with ${playerScore} everywhere.` to the console.
-                console.log(
-                    `Draw! The game ends with ${playerScore}s everywhere.`
-                );
+                console.log(`Draw! The game ends with ${playerScore}s everywhere.`);
             }
             // Else, the computerScore is higher than the playerScore:
             else {
                 // Log `Defeat! The computer won the game with a score of ${computerScore} to ${playerScore}.` to the console.
-                console.log(
-                    `Defeat! The computer won the game with a score of ${computerScore} to ${playerScore}.`
-                );
+                console.log(`Defeat! The computer won the game with a score of ${computerScore} to ${playerScore}.`);
             }
         }
     </script>
