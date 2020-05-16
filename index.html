@@ -1,85 +1,89 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Rock, Paper, Scissors</title>
     <meta charset="UTF-8" />
-  </head>
-  <body>
+</head>
+
+<body>
     <h1>Play Rock, Paper, Scissors</h1>
     <p>Open the console to start.</p>
-  </body>
-  <script>
+</body>
+<script>
     // Declare a global function named computerPlay that chooses something to play at random.
     function computerPlay() {
-      // Choose a random integer between 0 inclusively and 3 exclusively and store it in a variable named randomInt.
-      let randomInt = Math.floor(Math.random() * 3);
-      // Log value of randomInt to the console.
-      console.log(`randomInt === ${randomInt}`);
-      // Create a variable named result to store the computer's choice.
-      let result;
-      // Assign a value to result based on randomInt's value.
-      switch (randomInt) {
-        case 0:
-          // If randomInt = 0, assign the value of "Rock" to result.
-          result = "Rock";
-          break;
-        case 1:
-          // If randomInt = 1, assign the value of "Paper" to result.
-          result = "Paper";
-          break;
-        case 2:
-          //If randomInt = 0, assign the value of 'Scissors' to result.
-          result = "Scissors";
-          break;
-      }
-      // Log value of result to the console.
-      console.log(`result === ${result}`);
-      // Return result.
-      return result;
+        // Choose a random integer between 0 inclusively and 3 exclusively and store it in a variable named randomInt.
+        let randomInt = Math.floor(Math.random() * 3);
+        // Log value of randomInt to the console.
+        console.log(`randomInt === ${randomInt}`);
+        // Create a variable named result to store the computer's choice.
+        let result;
+        // Assign a value to result based on randomInt's value.
+        switch (randomInt) {
+            case 0:
+                // If randomInt = 0, assign the value of "Rock" to result.
+                result = "Rock";
+                break;
+            case 1:
+                // If randomInt = 1, assign the value of "Paper" to result.
+                result = "Paper";
+                break;
+            case 2:
+                //If randomInt = 0, assign the value of 'Scissors' to result.
+                result = "Scissors";
+                break;
+        }
+        // Log value of result to the console.
+        console.log(`result === ${result}`);
+        // Return result.
+        return result;
     }
     // Declare a global function named userSelect that prompts the player for his choice and returns it.
     function userSelect() {
-      // Store a boolean with a default value of false in a variable named userHasPlayed.
-      let userHasPlayed = false;
-      // Create a variable named userPrompt to hold a string of what the player typed in.
-      let userPrompt;
-      // While userHasPlayed === false keep doing:
-      while (userHasPlayed === false) {
-        // Log the value of userHasPlayed to the console.
-        console.log(`userHasPlayed === ${userHasPlayed}`);
-        // Prompt the user for his choice and store the result in userPrompt.
-        userPrompt = prompt("Type in your choice.");
-        // Log the value of userPrompt to the console.
-        console.log(`userPrompt === ${userPrompt}`);
-        // If userPrompt (case insensitive) is Rock:
-        if (userPrompt.toUpperCase() === "ROCK") {
-          // Log the user's choice to the console.
-          console.log("User picked Rock");
-          // return "Rock"
-          return "Rock";
+        // Store a boolean with a default value of false in a variable named userHasPlayed.
+        let userHasPlayed = false;
+        // Create a variable named userPrompt to hold a string of what the player typed in.
+        let userPrompt;
+        // While userHasPlayed === false keep doing:
+        while (userHasPlayed === false) {
+            // Log the value of userHasPlayed to the console.
+            console.log(`userHasPlayed === ${userHasPlayed}`);
+            // Prompt the user for his choice and store the result in userPrompt.
+            userPrompt = prompt("Type in your choice.");
+            // Log the value of userPrompt to the console.
+            console.log(`userPrompt === ${userPrompt}`);
+            // If userPrompt (case insensitive) is Rock:
+            if (userPrompt.toUpperCase() === "ROCK") {
+                // Log the user's choice to the console.
+                console.log("User picked Rock");
+                // return "Rock"
+                return "Rock";
+            }
+            // If userPrompt (case insensitive) is Paper:
+            else if (userPrompt.toUpperCase() === "PAPER") {
+                // Log the user's choice to the console.
+                console.log("User picked Paper");
+                // return "Paper"
+                return "Paper";
+            }
+            // If userPrompt (case insensitive) is Scissors:
+            else if (userPrompt.toUpperCase() === "SCISSORS") {
+                // Log the user's choice to the console.
+                console.log("User picked Paper");
+                // return "Scissors"
+                return "Scissors";
+            }
+            // If userPrompt does not match any of the choices then:
+            else {
+                // Alert the user to pick a correct choice.
+                alert(
+                    'Please pick one of the following "Rock", "Paper" or "Scissors".'
+                );
+            }
         }
-        // If userPrompt (case insensitive) is Paper:
-        else if (userPrompt.toUpperCase() === "PAPER") {
-          // Log the user's choice to the console.
-          console.log("User picked Paper");
-          // return "Paper"
-          return "Paper";
-        }
-        // If userPrompt (case insensitive) is Scissors:
-        else if (userPrompt.toUpperCase() === "SCISSORS") {
-          // Log the user's choice to the console.
-          console.log("User picked Paper");
-          // return "Scissors"
-          return "Scissors";
-        }
-        // If userPrompt does not match any of the choices then:
-        else {
-          // Alert the user to pick a correct choice.
-          alert(
-            'Please pick one of the following "Rock", "Paper" or "Scissors".'
-          );
-        }
-      }
     }
-  </script>
+
+</script>
+
 </html>
