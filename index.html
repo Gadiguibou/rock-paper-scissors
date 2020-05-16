@@ -20,6 +20,8 @@
             let roundPrompt = Number(prompt("How many rounds do you want to play?"));
             // If roundPrompt is greater than 1 (implies that it is a number):
             if (roundPrompt >= 1) {
+                // Log how many rounds will be played to the console.
+                console.log(`You are playing a best of ${roundPrompt}.`);
                 // Play a game with roundPrompt rounds.
                 game(roundPrompt);
             }
