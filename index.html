@@ -9,12 +9,33 @@
     <p>Open the console to start.</p>
   </body>
   <script>
-      // Declare a global function named computerPlay that chooses something to play at random.
-      function computerPlay() {
-          // Choose a random integer between 0 inclusively and 3 exclusively.
-          let randomInt = Math.floor(Math.random() * 3);
-          // Return that integer.
-          return randomInt;
+    // Declare a global function named computerPlay that chooses something to play at random.
+    function computerPlay() {
+      // Choose a random integer between 0 inclusively and 3 exclusively and store it in a variable named randomInt.
+      let randomInt = Math.floor(Math.random() * 3);
+      // Log value of randomInt to the console.
+      console.log(`randomInt === ${randomInt}`);
+      // Create a variable named result to store the computer's choice.
+      let result;
+      // Assign a value to result based on randomInt's value.
+      switch (randomInt) {
+        case 0:
+          // If randomInt = 0, assign the value of "Rock" to result.
+          result = "Rock";
+          break;
+        case 1:
+          // If randomInt = 1, assign the value of "Paper" to result.
+          result = "Paper";
+          break;
+        case 2:
+          //If randomInt = 0, assign the value of 'Scissors' to result.
+          result = "Scissors";
+          break;
       }
+      // Log value of result to the console.
+      console.log(`result === ${result}`);
+      // Return result.
+      return result;
+    }
   </script>
 </html>
