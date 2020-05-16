@@ -35,7 +35,7 @@
         // Choose a random integer between 0 inclusively and 3 exclusively and store it in a variable named randomInt.
         let randomInt = Math.floor(Math.random() * 3);
         // Log value of randomInt to the console.
-        console.log(`randomInt === ${randomInt}`);
+        // console.log(`randomInt === ${randomInt}`);
         // Create a variable named result to store the computer's choice.
         let result;
         // Assign a value to result based on randomInt's value.
@@ -54,7 +54,7 @@
                 break;
         }
         // Log value of result to the console.
-        console.log(`result === ${result}`);
+        // console.log(`result === ${result}`);
         // Return result.
         return result;
     }
@@ -67,11 +67,11 @@
         // While userHasPlayed === false keep doing:
         while (userHasPlayed === false) {
             // Log the value of userHasPlayed to the console.
-            console.log(`userHasPlayed === ${userHasPlayed}`);
+            // console.log(`userHasPlayed === ${userHasPlayed}`);
             // Prompt the user for his choice and store the result in userPrompt.
             userPrompt = prompt("Type in your choice.");
             // Log the value of userPrompt to the console.
-            console.log(`userPrompt === ${userPrompt}`);
+            // console.log(`userPrompt === ${userPrompt}`);
             // If userPrompt (case insensitive) is Rock:
             if (userPrompt.toUpperCase() === "ROCK") {
                 // Log the user's choice to the console.
@@ -105,7 +105,7 @@
     // Declare a global function that takes 2 parameters: playerSelection and computerSelection, and returns the winner of the round. 
     function playRound(playerSelection, computerSelection) {
         // Log both arguments to the console
-        console.log(`playerSelection === ${playerSelection} && computerSelection === ${computerSelection}`);
+        // console.log(`playerSelection === ${playerSelection} && computerSelection === ${computerSelection}`);
         // If both arguments are the same return "It's a draw! You both chose " + the value of the arguments
         if (playerSelection === computerSelection) {
             return `It's a draw! You both chose ${playerSelection}`;
