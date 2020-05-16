@@ -9,8 +9,27 @@
 <body>
     <h1>Play Rock, Paper, Scissors</h1>
     <p>Open the console to start.</p>
+    <p>Then press this button to play a game.</p>
+    <button class="playButton">Play now!</button>
 </body>
 <script>
+    // Create a constant named playButton to store the button element of class .playButton on the page.
+    const playButton = document.querySelector(".playButton");
+    // When the playButton is clicked, play a game.
+    playButton.onclick = function () {
+        // Ask how many rounds the user wants to play and store it in a variable named roundPrompt.
+        let roundPrompt = Number(prompt("How many rounds do you want to play?"));
+        // If roundPrompt is greater than 1 (implies that it is a number):
+        if (roundPrompt >= 1) {
+            // Play a game with roundPrompt rounds.
+            game(roundPrompt);
+        }
+        // Else:
+        else {
+            // Alert "Please enter a valid number."
+            alert("Please enter a valid number.");
+        }
+    }
     // Declare a global function named computerPlay that chooses something to play at random.
     function computerPlay() {
         // Choose a random integer between 0 inclusively and 3 exclusively and store it in a variable named randomInt.
