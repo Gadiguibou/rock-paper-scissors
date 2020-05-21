@@ -71,6 +71,8 @@ const stopGame = function () {
 const playRound = function (playerSelection, computerSelection) {
   // If both arguments are the same return "It's a draw! You both chose " + the value of the arguments
   if (playerSelection === computerSelection) {
+    currentRound++;
+    currentRoundNode.textContent = currentRound;
     roundResultPara.textContent = `It's a draw. You both chose ${playerSelection}`;
     return "Draw";
   }
