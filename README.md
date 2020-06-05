@@ -1,3 +1,5 @@
 # Rock, Paper, Scissors
 
-A console implementation I made as part of the "The Odin Project" curriculum.
+A small website implementing this game with a basic UI. Fun project to practice DOM manipulation.
+
+Click [here](https://gadiguibou.github.io/rock-paper-scissors/) for the deployment.
